@@ -1,7 +1,7 @@
 {
 	"if": {
 		"field": "tags",
-		"exists" : true
+		"exists" : false
 	},
 	"then": {
 		"effect": "deny"
