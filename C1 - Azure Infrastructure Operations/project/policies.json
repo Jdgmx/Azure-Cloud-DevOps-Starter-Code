@@ -1,20 +1,9 @@
 {
-	"type": "Microsoft.Authorization/policyDefinitions",
-	"name": "Deny-the-creation-of-resources-that-do-not-have-tags",
-	"properties": {
-		"mode": "all",
-		"displayName": "Tagging-Policy",
-		"description": "Deny the creation of resources that do not have tags",
-		"policyRule": {
-			"if": {
-				"count": {
-					"field": "tags",
-					"lessOrEquals": 0
-				}
-			},
-			"then": {
-				"effect": "deny"
-			}
-		}
+	"if": {
+		"field": "tags",
+		"exists" : true
+	},
+	"then": {
+		"effect": "deny"
 	}
 }
