@@ -7,3 +7,8 @@ variable "location" {
 	description = "The Azure Region in which all resources in this example should be created."
 	default = "eastus"
 }
+
+variable "packer_image" {
+	description = "Image created with packer"
+	default = "myWebServerImage"
+}
