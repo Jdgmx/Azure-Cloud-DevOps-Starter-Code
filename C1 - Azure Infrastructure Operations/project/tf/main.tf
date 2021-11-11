@@ -26,7 +26,7 @@ resource "azurerm_subnet" "internal" {
 
 # Security group, like the firewall rules, I guess.
 resource "azurerm_network_security_group" "security" {
-	name 						= "${var.prefix}-sg""
+	name 						= "${var.prefix}-sg"
 	location					= azurerm_resource_group.main.location
 	resource_group_name 	= azurerm_resource_group.main.name
 
@@ -118,6 +118,7 @@ resource "azurerm_network_interface" "internal" {
 # }
 
 # Load balancer (this is a jump of faith)
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb
 resource "azurerm_lb" "load_balancer" {
 	name						= "$(var.prefix)-lb"
 	location					= azurerm_resource_group.main.location
@@ -136,12 +137,12 @@ resource "azurerm_lb" "load_balancer" {
 # Not sure what the backended address pool does
 resource "azurerm_lb_backend_address_pool" "address_pool" {
 	name 						= "${var.prefix}-bap"
-	resource_group_name 	= azurerm_resource_group.main.name
+#	resource_group_name 	= azurerm_resource_group.main.name // deprecated?
 	loadbalancer_id 		= azurerm_lb.load_balancer.id
 	
-	tags = {
-		lesson = 1
-	}
+#	tags = {
+#		lesson = 1
+#	}
 }
 
 # less idea what this association is

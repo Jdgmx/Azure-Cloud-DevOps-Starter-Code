@@ -185,3 +185,8 @@ references:
 https://github.com/rfoltz/Udacity-DevOps-Project-1/blob/main/Terraform/main.tf
 https://github.com/rfoltz/Udacity-DevOps-Project-1/blob/main/Terraform/vars.tf
 http://vcloud-lab.com/entries/microsoft-azure/create-an-azure-virtual-machine-scale-set-and-load-balancer-using-terraform
+
+
+
+# Another Packer output (again)
+

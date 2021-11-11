@@ -8,6 +8,16 @@ variable "location" {
 	default = "eastus"
 }
 
+variable "username" {
+	type = string
+	default = "joaquin.d"
+}
+
+variable "password" {
+	type = string
+	default = "j0aqu1n__0"
+}
+
 variable "packer_image" {
 	description = "Image created with packer"
 	default = "myWebServerImage"
