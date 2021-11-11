@@ -12,3 +12,8 @@ variable "packer_image" {
 	description = "Image created with packer"
 	default = "myWebServerImage"
 }
+
+variable "number_vms" {
+	description = "Number of virtual machines to create"
+	default = 1
+}

@@ -179,3 +179,9 @@ ManagedImageResourceGroupName: WebServerEx-rg
 ManagedImageName: myWebServerImage
 ManagedImageId: /subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/images/myWebServerImage
 ManagedImageLocation: East US
+
+
+references:
+https://github.com/rfoltz/Udacity-DevOps-Project-1/blob/main/Terraform/main.tf
+https://github.com/rfoltz/Udacity-DevOps-Project-1/blob/main/Terraform/vars.tf
+http://vcloud-lab.com/entries/microsoft-azure/create-an-azure-virtual-machine-scale-set-and-load-balancer-using-terraform
