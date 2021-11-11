@@ -120,12 +120,12 @@ resource "azurerm_network_interface" "internal" {
 # Load balancer (this is a jump of faith)
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb
 resource "azurerm_lb" "load_balancer" {
-	name						= "$(var.prefix)-lb"
+	name						= "${var.prefix}-lb"
 	location					= azurerm_resource_group.main.location
 	resource_group_name	= azurerm_resource_group.main.name
 	
 	frontend_ip_configuration {
-		name 							= "$(var.prefix)-PublicIP"
+		name 							= "${var.prefix}-PublicIP"
 		public_ip_address_id 	= azurerm_public_ip.public_ip.id
 	}
 	
@@ -168,10 +168,10 @@ resource "azurerm_availability_set" "avail_set" {
 }
 
 # the image we are using from packer
-# note the name comes from packer
+# note the name comes from packer, and note that the rg has to be different
 data "azurerm_image" "packer_image" {
 	name 						= var.packer_image
-	resource_group_name 	= azurerm_resource_group.main.name
+	resource_group_name 	= var.packer_image_rg
 }
 
 # The virtual machine itself

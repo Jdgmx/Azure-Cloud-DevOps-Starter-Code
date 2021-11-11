@@ -15,8 +15,8 @@
 		"image_offer": "UbuntuServer",
 		"image_sku": "18.04-LTS",
 
-		"managed_image_resource_group_name": "WebServerEx-rg",
-		"managed_image_name": "myWebServerImage",
+		"managed_image_resource_group_name": "PackerImage-rg",
+		"managed_image_name": "WebServerImage",
 
 		"location": "East US",
 		"vm_size": "Standard_D2s_v3"

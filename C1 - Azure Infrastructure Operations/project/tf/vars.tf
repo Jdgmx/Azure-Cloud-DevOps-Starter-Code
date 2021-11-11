@@ -18,9 +18,14 @@ variable "password" {
 	default = "j0aqu1n__0"
 }
 
+variable "packer_image_rg" {
+	description = "Resource group where the packer image lives"
+	default = "PackerImage-rg"
+}
+
 variable "packer_image" {
 	description = "Image created with packer"
-	default = "myWebServerImage"
+	default = "WebServerImage"
 }
 
 variable "number_vms" {
