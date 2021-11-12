@@ -211,7 +211,7 @@ The terraform variables are:
 - **password** defaults to *"j0aqu1n__0"*
 - **packer_image_rg** defaults to *"PackerImage-rg"*
 - **packer_image** defaults to *"WebServerImage"*
-- **number_vms**  defaults to *1*
+- **number_vms**  defaults to *2*
 
 The main module is in the file: **./tf/main.tf**.
 

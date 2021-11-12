@@ -52,6 +52,7 @@ packer build server.json
 To create the desired infrastructure:
 
 - **cd** to **./tf**
+- Make sure to run **terraform init**.
 - Edit the **vars.tf** file and adjust the desired variables.
   - **prefix** Will be common in the Azure's resource group.
   - **location** Azure region to deploy.
