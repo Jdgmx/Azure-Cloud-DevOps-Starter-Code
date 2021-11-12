@@ -4,7 +4,7 @@ This file contains the steps that I made to complete this project.
 
 ## Policy definition
 
-See the file **./policies.json**. The only required policy is to enforce the existance of at least one tag.
+See the file **./policies.json**. The only required policy is to enforce the existence of at least one tag.
 Code to apply the policy:
 
 ```
@@ -97,11 +97,14 @@ project  az policy assignment list
 ]
 ```
 
+Screenshot of the policy in Azure:
+![Screenshot of the policy in Azure](./policy.png)
+
 ## Packer Image
 
-The important lesson was that the image should reside in different azure resource group than the terraform teplate. ***Important:*** the variables *"client_id"*, *"client_secret"*, and *"subscription_id"* must be obtained from Azure.
+The important lesson was that the image should reside in different Azure resource group than the Terraform template. ***Important:*** the variables *"client_id"*, *"client_secret"*, and *"subscription_id"* must be obtained from Azure.
 See file **./packer/server.json**.
-Note that *managed_image_resource_group_name* is hardcoded to *PackerImage-rg* and it must prexist in Azure.
+Note that *managed_image_resource_group_name* is hardcoded to *PackerImage-rg* and it must preexist in Azure.
 
 ### Packer output
 
@@ -202,15 +205,15 @@ ManagedImageLocation: East US
 For the variables see file **./tf/vars.tf**.
 The terraform variables are:
 
-- "prefix" The prefix which should be used for all resources in the web server exercise.  "WebServerEx"
-- "location" "The Azure Region in which all resources in this example should be created. "eastus"
-- "username" The username of the virtual machine.  "joaquin.d"
-- "password" The password of the virtual machine. "j0aqu1n__0"
-- "packer_image_rg" Resource group where the packer image lives "PackerImage-rg"
-- "packer_image" "Image created with packer" "WebServerImage"
-- "number_vms" Number of virtual machines to create 1
+- **prefix** defaults to *"WebServerEx"*
+- **location** defaults to *"eastus"*
+- **username** defaults to *"joaquin.d"*
+- **password** defaults to *"j0aqu1n__0"*
+- **packer_image_rg** defaults to *"PackerImage-rg"*
+- **packer_image** defaults to *"WebServerImage"*
+- **number_vms**  defaults to *1*
 
-The main module is in tfe file: **./tf/main.tf**.
+The main module is in the file: **./tf/main.tf**.
 
 ### Terraform output
 
@@ -942,4 +945,6 @@ azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Creation complete af
 Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
 ```
 
-Play appied successfuly.
+Plan applied successfully. Screenshot of the infrastructure in Azure:
+![Screenshot of the infrastructure in Azure](./infra.png)
+
