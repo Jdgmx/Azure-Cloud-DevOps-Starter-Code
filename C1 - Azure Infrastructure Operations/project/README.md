@@ -10,7 +10,7 @@ Implement an application based on Azure, deployed as IaaS. For this the solution
 
 ## Prerequisites
 
-- An Azure account. The information that will be required is:
+- An Azure account. Check this [blog post](https://www.inkoop.io/blog/how-to-get-azure-api-credentials/) for the instructions to get the following credentials:
   - client_id
   - client_secret
   - subscription_id
@@ -45,7 +45,7 @@ To create the image used for the virtual machines:
 packer build server.json
 ```
 
-### 3. Deploy infrastructure
+### 3. Deploy Infrastructure
 
 To create the desired infrastructure:
 
