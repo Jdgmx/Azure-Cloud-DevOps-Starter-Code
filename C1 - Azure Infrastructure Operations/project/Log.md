@@ -651,298 +651,469 @@ To perform exactly these actions, run the following command to apply:
 ### Applying plan
 
 ```
-tf  terraform apply "solution.plan"  
-azurerm_resource_group.main: Creating...
-azurerm_resource_group.main: Creation complete after 1s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg]
-azurerm_availability_set.avail_set: Creating...
-azurerm_virtual_network.vnet: Creating...
-azurerm_public_ip.public_ip: Creating...
-azurerm_managed_disk.disk[0]: Creating...
-azurerm_network_security_group.security: Creating...
-azurerm_availability_set.avail_set: Creation complete after 2s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/availabilitySets/WebServerEx-avaset]
-azurerm_public_ip.public_ip: Creation complete after 4s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/publicIPAddresses/WebServerEx-publicIp]
-azurerm_lb.load_balancer: Creating...
-azurerm_managed_disk.disk[0]: Creation complete after 5s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/disks/WebServerEx-disk-0]
-azurerm_lb.load_balancer: Creation complete after 2s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb]
-azurerm_lb_backend_address_pool.address_pool: Creating...
-azurerm_network_security_group.security: Creation complete after 7s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkSecurityGroups/WebServerEx-sg]
-azurerm_lb_backend_address_pool.address_pool: Creation complete after 3s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb/backendAddressPools/WebServerEx-bap]
-azurerm_virtual_network.vnet: Still creating... [10s elapsed]
-azurerm_virtual_network.vnet: Still creating... [20s elapsed]
-azurerm_virtual_network.vnet: Still creating... [30s elapsed]
-azurerm_virtual_network.vnet: Still creating... [40s elapsed]
-azurerm_virtual_network.vnet: Still creating... [50s elapsed]
-azurerm_virtual_network.vnet: Still creating... [1m0s elapsed]
-azurerm_virtual_network.vnet: Still creating... [1m10s elapsed]
-azurerm_virtual_network.vnet: Still creating... [1m20s elapsed]
-azurerm_virtual_network.vnet: Still creating... [1m30s elapsed]
-azurerm_virtual_network.vnet: Still creating... [1m40s elapsed]
-azurerm_virtual_network.vnet: Still creating... [1m50s elapsed]
-azurerm_virtual_network.vnet: Still creating... [2m0s elapsed]
-azurerm_virtual_network.vnet: Still creating... [2m10s elapsed]
-azurerm_virtual_network.vnet: Still creating... [2m20s elapsed]
-azurerm_virtual_network.vnet: Still creating... [2m30s elapsed]
-azurerm_virtual_network.vnet: Still creating... [2m40s elapsed]
-azurerm_virtual_network.vnet: Still creating... [2m50s elapsed]
-azurerm_virtual_network.vnet: Still creating... [3m0s elapsed]
-azurerm_virtual_network.vnet: Still creating... [3m10s elapsed]
-azurerm_virtual_network.vnet: Still creating... [3m20s elapsed]
-azurerm_virtual_network.vnet: Still creating... [3m30s elapsed]
-azurerm_virtual_network.vnet: Still creating... [3m40s elapsed]
-azurerm_virtual_network.vnet: Still creating... [3m50s elapsed]
-azurerm_virtual_network.vnet: Still creating... [4m0s elapsed]
-azurerm_virtual_network.vnet: Still creating... [4m10s elapsed]
-azurerm_virtual_network.vnet: Still creating... [4m21s elapsed]
-azurerm_virtual_network.vnet: Still creating... [4m31s elapsed]
-azurerm_virtual_network.vnet: Still creating... [4m41s elapsed]
-azurerm_virtual_network.vnet: Still creating... [4m51s elapsed]
-azurerm_virtual_network.vnet: Still creating... [5m1s elapsed]
-azurerm_virtual_network.vnet: Still creating... [5m11s elapsed]
-azurerm_virtual_network.vnet: Still creating... [5m21s elapsed]
-azurerm_virtual_network.vnet: Still creating... [5m31s elapsed]
-azurerm_virtual_network.vnet: Still creating... [5m41s elapsed]
-azurerm_virtual_network.vnet: Still creating... [5m51s elapsed]
-azurerm_virtual_network.vnet: Still creating... [6m1s elapsed]
-azurerm_virtual_network.vnet: Still creating... [6m11s elapsed]
-azurerm_virtual_network.vnet: Still creating... [6m21s elapsed]
-azurerm_virtual_network.vnet: Still creating... [6m31s elapsed]
-azurerm_virtual_network.vnet: Still creating... [6m41s elapsed]
-azurerm_virtual_network.vnet: Still creating... [6m51s elapsed]
-azurerm_virtual_network.vnet: Still creating... [7m1s elapsed]
-azurerm_virtual_network.vnet: Still creating... [7m11s elapsed]
-azurerm_virtual_network.vnet: Still creating... [7m21s elapsed]
-azurerm_virtual_network.vnet: Still creating... [7m31s elapsed]
-azurerm_virtual_network.vnet: Still creating... [7m41s elapsed]
-azurerm_virtual_network.vnet: Still creating... [7m51s elapsed]
-azurerm_virtual_network.vnet: Still creating... [8m1s elapsed]
-azurerm_virtual_network.vnet: Still creating... [8m11s elapsed]
-azurerm_virtual_network.vnet: Still creating... [8m21s elapsed]
-azurerm_virtual_network.vnet: Still creating... [8m31s elapsed]
-azurerm_virtual_network.vnet: Still creating... [8m41s elapsed]
-azurerm_virtual_network.vnet: Still creating... [8m51s elapsed]
-azurerm_virtual_network.vnet: Still creating... [9m1s elapsed]
-╷
-│ Error: checking for presence of existing Virtual Network: (Name "WebServerEx-network" / Resource Group "WebServerEx-rg"): network.VirtualNetworksClient#Get: Failure responding to request: StatusCode=503 -- Original Error: autorest/azure: Service returned an error. Status=503 Code="ServerTimeout" Message="The request timed out. Diagnostic information: timestamp '20211111T221422Z', subscription id 'a05e9c22-474e-442c-8d07-d2b208778ef9', tracking id '8598e770-e59a-42b4-a00d-e3e2c6c0403a', request correlation id 'dcb4d639-2031-e236-e3d8-37879d4dc3e5'."
-│ 
-│   with azurerm_virtual_network.vnet,
-│   on main.tf line 12, in resource "azurerm_virtual_network" "vnet":
-│   12: resource "azurerm_virtual_network" "vnet" {
-│ 
-╵
-```
-
-Here I got a timeout error, so I started all over again.
-
-```
 tf  terraform plan -out solution.plan
-azurerm_resource_group.main: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg]
-azurerm_availability_set.avail_set: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/availabilitySets/WebServerEx-avaset]
-azurerm_public_ip.public_ip: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/publicIPAddresses/WebServerEx-publicIp]
-azurerm_managed_disk.disk[0]: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/disks/WebServerEx-disk-0]
-azurerm_network_security_group.security: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkSecurityGroups/WebServerEx-sg]
-azurerm_lb.load_balancer: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb]
-azurerm_lb_backend_address_pool.address_pool: Refreshing state... [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb/backendAddressPools/WebServerEx-bap]
-
-Note: Objects have changed outside of Terraform
-
-Terraform detected the following changes made outside of Terraform since the last "terraform apply":
-
-  # azurerm_public_ip.public_ip has been changed
-  ~ resource "azurerm_public_ip" "public_ip" {
-		  id                      = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/publicIPAddresses/WebServerEx-publicIp"
-		+ ip_tags                 = {}
-		  name                    = "WebServerEx-publicIp"
-		  tags                    = {
-				"lesson" = "1"
-		  }
-		  # (10 unchanged attributes hidden)
-	 }
-  # azurerm_resource_group.main has been changed
-  ~ resource "azurerm_resource_group" "main" {
-		  id       = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg"
-		  name     = "WebServerEx-rg"
-		+ tags     = {}
-		  # (1 unchanged attribute hidden)
-	 }
-  # azurerm_managed_disk.disk[0] has been changed
-  ~ resource "azurerm_managed_disk" "disk" {
-		  id                     = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/disks/WebServerEx-disk-0"
-		  name                   = "WebServerEx-disk-0"
-		  tags                   = {
-				"lesson" = "1"
-		  }
-		+ zones                  = []
-		  # (9 unchanged attributes hidden)
-	 }
-
-Unless you have made equivalent changes to your configuration, or ignored the relevant attributes using ignore_changes, the following plan may include actions to undo or respond to these
-changes.
-
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
 
+  # azurerm_availability_set.avail_set will be created
+  + resource "azurerm_availability_set" "avail_set" {
+      + id                           = (known after apply)
+      + location                     = "eastus"
+      + managed                      = true
+      + name                         = "WebServerEx-avaset"
+      + platform_fault_domain_count  = 3
+      + platform_update_domain_count = 5
+      + resource_group_name          = "WebServerEx-rg"
+      + tags                         = {
+          + "lesson" = "1"
+        }
+    }
+
+  # azurerm_lb.load_balancer will be created
+  + resource "azurerm_lb" "load_balancer" {
+      + id                   = (known after apply)
+      + location             = "eastus"
+      + name                 = "WebServerEx-lb"
+      + private_ip_address   = (known after apply)
+      + private_ip_addresses = (known after apply)
+      + resource_group_name  = "WebServerEx-rg"
+      + sku                  = "Basic"
+      + sku_tier             = "Regional"
+      + tags                 = {
+          + "lesson" = "1"
+        }
+
+      + frontend_ip_configuration {
+          + availability_zone                                  = (known after apply)
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + id                                                 = (known after apply)
+          + inbound_nat_rules                                  = (known after apply)
+          + load_balancer_rules                                = (known after apply)
+          + name                                               = "WebServerEx-PublicIP"
+          + outbound_rules                                     = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = (known after apply)
+          + private_ip_address_version                         = (known after apply)
+          + public_ip_address_id                               = (known after apply)
+          + public_ip_prefix_id                                = (known after apply)
+          + subnet_id                                          = (known after apply)
+          + zones                                              = (known after apply)
+        }
+    }
+
+  # azurerm_lb_backend_address_pool.address_pool will be created
+  + resource "azurerm_lb_backend_address_pool" "address_pool" {
+      + backend_ip_configurations = (known after apply)
+      + id                        = (known after apply)
+      + load_balancing_rules      = (known after apply)
+      + loadbalancer_id           = (known after apply)
+      + name                      = "WebServerEx-bap"
+      + outbound_rules            = (known after apply)
+      + resource_group_name       = (known after apply)
+    }
+
   # azurerm_linux_virtual_machine.vm[0] will be created
   + resource "azurerm_linux_virtual_machine" "vm" {
-		+ admin_password                  = (sensitive value)
-		+ admin_username                  = "joaquin.d"
-		+ allow_extension_operations      = true
-		+ availability_set_id             = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/availabilitySets/WebServerEx-avaset"
-		+ computer_name                   = (known after apply)
-		+ disable_password_authentication = false
-		+ extensions_time_budget          = "PT1H30M"
-		+ id                              = (known after apply)
-		+ location                        = "eastus"
-		+ max_bid_price                   = -1
-		+ name                            = "WebServerEx-vm-0"
-		+ network_interface_ids           = (known after apply)
-		+ platform_fault_domain           = -1
-		+ priority                        = "Regular"
-		+ private_ip_address              = (known after apply)
-		+ private_ip_addresses            = (known after apply)
-		+ provision_vm_agent              = true
-		+ public_ip_address               = (known after apply)
-		+ public_ip_addresses             = (known after apply)
-		+ resource_group_name             = "WebServerEx-rg"
-		+ size                            = "Standard_B1s"
-		+ source_image_id                 = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/PackerImage-rg/providers/Microsoft.Compute/images/WebServerImage"
-		+ tags                            = {
-			 + "lesson" = "1"
-		  }
-		+ virtual_machine_id              = (known after apply)
-		+ zone                            = (known after apply)
+      + admin_password                  = (sensitive value)
+      + admin_username                  = "joaquin.d"
+      + allow_extension_operations      = true
+      + availability_set_id             = (known after apply)
+      + computer_name                   = (known after apply)
+      + disable_password_authentication = false
+      + extensions_time_budget          = "PT1H30M"
+      + id                              = (known after apply)
+      + location                        = "eastus"
+      + max_bid_price                   = -1
+      + name                            = "WebServerEx-vm-0"
+      + network_interface_ids           = (known after apply)
+      + platform_fault_domain           = -1
+      + priority                        = "Regular"
+      + private_ip_address              = (known after apply)
+      + private_ip_addresses            = (known after apply)
+      + provision_vm_agent              = true
+      + public_ip_address               = (known after apply)
+      + public_ip_addresses             = (known after apply)
+      + resource_group_name             = "WebServerEx-rg"
+      + size                            = "Standard_B1s"
+      + source_image_id                 = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/PackerImage-rg/providers/Microsoft.Compute/images/WebServerImage"
+      + tags                            = {
+          + "lesson" = "1"
+        }
+      + virtual_machine_id              = (known after apply)
+      + zone                            = (known after apply)
 
-		+ os_disk {
-			 + caching                   = "ReadWrite"
-			 + disk_size_gb              = (known after apply)
-			 + name                      = (known after apply)
-			 + storage_account_type      = "Standard_LRS"
-			 + write_accelerator_enabled = false
-		  }
-	 }
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = (known after apply)
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+    }
+
+  # azurerm_linux_virtual_machine.vm[1] will be created
+  + resource "azurerm_linux_virtual_machine" "vm" {
+      + admin_password                  = (sensitive value)
+      + admin_username                  = "joaquin.d"
+      + allow_extension_operations      = true
+      + availability_set_id             = (known after apply)
+      + computer_name                   = (known after apply)
+      + disable_password_authentication = false
+      + extensions_time_budget          = "PT1H30M"
+      + id                              = (known after apply)
+      + location                        = "eastus"
+      + max_bid_price                   = -1
+      + name                            = "WebServerEx-vm-1"
+      + network_interface_ids           = (known after apply)
+      + platform_fault_domain           = -1
+      + priority                        = "Regular"
+      + private_ip_address              = (known after apply)
+      + private_ip_addresses            = (known after apply)
+      + provision_vm_agent              = true
+      + public_ip_address               = (known after apply)
+      + public_ip_addresses             = (known after apply)
+      + resource_group_name             = "WebServerEx-rg"
+      + size                            = "Standard_B1s"
+      + source_image_id                 = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/PackerImage-rg/providers/Microsoft.Compute/images/WebServerImage"
+      + tags                            = {
+          + "lesson" = "1"
+        }
+      + virtual_machine_id              = (known after apply)
+      + zone                            = (known after apply)
+
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = (known after apply)
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+    }
+
+  # azurerm_managed_disk.disk[0] will be created
+  + resource "azurerm_managed_disk" "disk" {
+      + create_option        = "Empty"
+      + disk_iops_read_only  = (known after apply)
+      + disk_iops_read_write = (known after apply)
+      + disk_mbps_read_only  = (known after apply)
+      + disk_mbps_read_write = (known after apply)
+      + disk_size_gb         = 1
+      + id                   = (known after apply)
+      + location             = "eastus"
+      + logical_sector_size  = (known after apply)
+      + max_shares           = (known after apply)
+      + name                 = "WebServerEx-disk-0"
+      + resource_group_name  = "WebServerEx-rg"
+      + source_uri           = (known after apply)
+      + storage_account_type = "Standard_LRS"
+      + tags                 = {
+          + "lesson" = "1"
+        }
+      + tier                 = (known after apply)
+    }
+
+  # azurerm_managed_disk.disk[1] will be created
+  + resource "azurerm_managed_disk" "disk" {
+      + create_option        = "Empty"
+      + disk_iops_read_only  = (known after apply)
+      + disk_iops_read_write = (known after apply)
+      + disk_mbps_read_only  = (known after apply)
+      + disk_mbps_read_write = (known after apply)
+      + disk_size_gb         = 1
+      + id                   = (known after apply)
+      + location             = "eastus"
+      + logical_sector_size  = (known after apply)
+      + max_shares           = (known after apply)
+      + name                 = "WebServerEx-disk-1"
+      + resource_group_name  = "WebServerEx-rg"
+      + source_uri           = (known after apply)
+      + storage_account_type = "Standard_LRS"
+      + tags                 = {
+          + "lesson" = "1"
+        }
+      + tier                 = (known after apply)
+    }
 
   # azurerm_network_interface.internal[0] will be created
   + resource "azurerm_network_interface" "internal" {
-		+ applied_dns_servers           = (known after apply)
-		+ dns_servers                   = (known after apply)
-		+ enable_accelerated_networking = false
-		+ enable_ip_forwarding          = false
-		+ id                            = (known after apply)
-		+ internal_dns_name_label       = (known after apply)
-		+ internal_domain_name_suffix   = (known after apply)
-		+ location                      = "eastus"
-		+ mac_address                   = (known after apply)
-		+ name                          = "WebServerEx-nic_int-0"
-		+ private_ip_address            = (known after apply)
-		+ private_ip_addresses          = (known after apply)
-		+ resource_group_name           = "WebServerEx-rg"
-		+ tags                          = {
-			 + "lesson" = "1"
-		  }
-		+ virtual_machine_id            = (known after apply)
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "WebServerEx-nic_int-0"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "WebServerEx-rg"
+      + tags                          = {
+          + "lesson" = "1"
+        }
+      + virtual_machine_id            = (known after apply)
 
-		+ ip_configuration {
-			 + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
-			 + name                                               = "internal"
-			 + primary                                            = (known after apply)
-			 + private_ip_address                                 = (known after apply)
-			 + private_ip_address_allocation                      = "dynamic"
-			 + private_ip_address_version                         = "IPv4"
-			 + subnet_id                                          = (known after apply)
-		  }
-	 }
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "internal"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # azurerm_network_interface.internal[1] will be created
+  + resource "azurerm_network_interface" "internal" {
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "WebServerEx-nic_int-1"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "WebServerEx-rg"
+      + tags                          = {
+          + "lesson" = "1"
+        }
+      + virtual_machine_id            = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "internal"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + subnet_id                                          = (known after apply)
+        }
+    }
 
   # azurerm_network_interface_backend_address_pool_association.pool_assoc[0] will be created
   + resource "azurerm_network_interface_backend_address_pool_association" "pool_assoc" {
-		+ backend_address_pool_id = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb/backendAddressPools/WebServerEx-bap"
-		+ id                      = (known after apply)
-		+ ip_configuration_name   = "internal"
-		+ network_interface_id    = (known after apply)
-	 }
+      + backend_address_pool_id = (known after apply)
+      + id                      = (known after apply)
+      + ip_configuration_name   = "internal"
+      + network_interface_id    = (known after apply)
+    }
+
+  # azurerm_network_interface_backend_address_pool_association.pool_assoc[1] will be created
+  + resource "azurerm_network_interface_backend_address_pool_association" "pool_assoc" {
+      + backend_address_pool_id = (known after apply)
+      + id                      = (known after apply)
+      + ip_configuration_name   = "internal"
+      + network_interface_id    = (known after apply)
+    }
+
+  # azurerm_network_security_group.security will be created
+  + resource "azurerm_network_security_group" "security" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "WebServerEx-sg"
+      + resource_group_name = "WebServerEx-rg"
+      + security_rule       = [
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "VirtualNetwork"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "VMAccess"
+              + priority                                   = 200
+              + protocol                                   = "*"
+              + source_address_prefix                      = "VirtualNetwork"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+          + {
+              + access                                     = "Deny"
+              + description                                = ""
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "NoInternetIn"
+              + priority                                   = 100
+              + protocol                                   = "*"
+              + source_address_prefix                      = "*"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+        ]
+      + tags                = {
+          + "lesson" = "1"
+        }
+    }
+
+  # azurerm_public_ip.public_ip will be created
+  + resource "azurerm_public_ip" "public_ip" {
+      + allocation_method       = "Static"
+      + availability_zone       = (known after apply)
+      + fqdn                    = (known after apply)
+      + id                      = (known after apply)
+      + idle_timeout_in_minutes = 4
+      + ip_address              = (known after apply)
+      + ip_version              = "IPv4"
+      + location                = "eastus"
+      + name                    = "WebServerEx-publicIp"
+      + resource_group_name     = "WebServerEx-rg"
+      + sku                     = "Basic"
+      + sku_tier                = "Regional"
+      + tags                    = {
+          + "lesson" = "1"
+        }
+      + zones                   = (known after apply)
+    }
+
+  # azurerm_resource_group.main will be created
+  + resource "azurerm_resource_group" "main" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "WebServerEx-rg"
+    }
 
   # azurerm_subnet.internal will be created
   + resource "azurerm_subnet" "internal" {
-		+ address_prefix                                 = (known after apply)
-		+ address_prefixes                               = [
-			 + "10.0.2.0/24",
-		  ]
-		+ enforce_private_link_endpoint_network_policies = false
-		+ enforce_private_link_service_network_policies  = false
-		+ id                                             = (known after apply)
-		+ name                                           = "internal"
-		+ resource_group_name                            = "WebServerEx-rg"
-		+ virtual_network_name                           = "WebServerEx-network"
-	 }
+      + address_prefix                                 = (known after apply)
+      + address_prefixes                               = [
+          + "10.0.2.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = false
+      + enforce_private_link_service_network_policies  = false
+      + id                                             = (known after apply)
+      + name                                           = "internal"
+      + resource_group_name                            = "WebServerEx-rg"
+      + virtual_network_name                           = "WebServerEx-network"
+    }
 
   # azurerm_subnet_network_security_group_association.main will be created
   + resource "azurerm_subnet_network_security_group_association" "main" {
-		+ id                        = (known after apply)
-		+ network_security_group_id = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkSecurityGroups/WebServerEx-sg"
-		+ subnet_id                 = (known after apply)
-	 }
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
 
   # azurerm_virtual_machine_data_disk_attachment.mount_disk[0] will be created
   + resource "azurerm_virtual_machine_data_disk_attachment" "mount_disk" {
-		+ caching                   = "ReadWrite"
-		+ create_option             = "Attach"
-		+ id                        = (known after apply)
-		+ lun                       = 0
-		+ managed_disk_id           = "/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/disks/WebServerEx-disk-0"
-		+ virtual_machine_id        = (known after apply)
-		+ write_accelerator_enabled = false
-	 }
+      + caching                   = "ReadWrite"
+      + create_option             = "Attach"
+      + id                        = (known after apply)
+      + lun                       = 0
+      + managed_disk_id           = (known after apply)
+      + virtual_machine_id        = (known after apply)
+      + write_accelerator_enabled = false
+    }
+
+  # azurerm_virtual_machine_data_disk_attachment.mount_disk[1] will be created
+  + resource "azurerm_virtual_machine_data_disk_attachment" "mount_disk" {
+      + caching                   = "ReadWrite"
+      + create_option             = "Attach"
+      + id                        = (known after apply)
+      + lun                       = 10
+      + managed_disk_id           = (known after apply)
+      + virtual_machine_id        = (known after apply)
+      + write_accelerator_enabled = false
+    }
 
   # azurerm_virtual_network.vnet will be created
   + resource "azurerm_virtual_network" "vnet" {
-		+ address_space         = [
-			 + "10.0.2.0/24",
-		  ]
-		+ dns_servers           = (known after apply)
-		+ guid                  = (known after apply)
-		+ id                    = (known after apply)
-		+ location              = "eastus"
-		+ name                  = "WebServerEx-network"
-		+ resource_group_name   = "WebServerEx-rg"
-		+ subnet                = (known after apply)
-		+ vm_protection_enabled = false
-	 }
+      + address_space         = [
+          + "10.0.2.0/24",
+        ]
+      + dns_servers           = (known after apply)
+      + guid                  = (known after apply)
+      + id                    = (known after apply)
+      + location              = "eastus"
+      + name                  = "WebServerEx-network"
+      + resource_group_name   = "WebServerEx-rg"
+      + subnet                = (known after apply)
+      + vm_protection_enabled = false
+    }
 
-Plan: 7 to add, 0 to change, 0 to destroy.
+Plan: 19 to add, 0 to change, 0 to destroy.
 
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Saved the plan to: solution.plan
 
 To perform exactly these actions, run the following command to apply:
-	 terraform apply "solution.plan"
-	 
-tf  terraform apply "solution.plan"  
+    terraform apply "solution.plan"
+tf  
+tf  
+tf  terraform apply "solution.plan"
+azurerm_resource_group.main: Creating...
+azurerm_resource_group.main: Creation complete after 1s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg]
+azurerm_availability_set.avail_set: Creating...
 azurerm_virtual_network.vnet: Creating...
+azurerm_managed_disk.disk[1]: Creating...
+azurerm_public_ip.public_ip: Creating...
+azurerm_managed_disk.disk[0]: Creating...
+azurerm_network_security_group.security: Creating...
+azurerm_availability_set.avail_set: Creation complete after 2s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/availabilitySets/WebServerEx-avaset]
+azurerm_public_ip.public_ip: Creation complete after 4s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/publicIPAddresses/WebServerEx-publicIp]
+azurerm_lb.load_balancer: Creating...
+azurerm_managed_disk.disk[1]: Creation complete after 4s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/disks/WebServerEx-disk-1]
+azurerm_managed_disk.disk[0]: Creation complete after 5s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/disks/WebServerEx-disk-0]
 azurerm_virtual_network.vnet: Creation complete after 6s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/virtualNetworks/WebServerEx-network]
+azurerm_network_security_group.security: Creation complete after 6s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkSecurityGroups/WebServerEx-sg]
 azurerm_subnet.internal: Creating...
+azurerm_lb.load_balancer: Creation complete after 3s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb]
+azurerm_lb_backend_address_pool.address_pool: Creating...
+azurerm_lb_backend_address_pool.address_pool: Creation complete after 1s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb/backendAddressPools/WebServerEx-bap]
 azurerm_subnet.internal: Creation complete after 4s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/virtualNetworks/WebServerEx-network/subnets/internal]
 azurerm_subnet_network_security_group_association.main: Creating...
+azurerm_network_interface.internal[1]: Creating...
 azurerm_network_interface.internal[0]: Creating...
 azurerm_subnet_network_security_group_association.main: Creation complete after 5s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/virtualNetworks/WebServerEx-network/subnets/internal]
-azurerm_network_interface.internal[0]: Creation complete after 6s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkInterfaces/WebServerEx-nic_int-0]
+azurerm_network_interface.internal[1]: Creation complete after 7s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkInterfaces/WebServerEx-nic_int-1]
+azurerm_network_interface.internal[0]: Creation complete after 9s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkInterfaces/WebServerEx-nic_int-0]
+azurerm_network_interface_backend_address_pool_association.pool_assoc[1]: Creating...
 azurerm_network_interface_backend_address_pool_association.pool_assoc[0]: Creating...
+azurerm_linux_virtual_machine.vm[1]: Creating...
 azurerm_linux_virtual_machine.vm[0]: Creating...
+azurerm_network_interface_backend_address_pool_association.pool_assoc[1]: Creation complete after 2s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkInterfaces/WebServerEx-nic_int-1/ipConfigurations/internal|/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb/backendAddressPools/WebServerEx-bap]
 azurerm_network_interface_backend_address_pool_association.pool_assoc[0]: Creation complete after 2s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/networkInterfaces/WebServerEx-nic_int-0/ipConfigurations/internal|/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Network/loadBalancers/WebServerEx-lb/backendAddressPools/WebServerEx-bap]
+azurerm_linux_virtual_machine.vm[1]: Still creating... [10s elapsed]
 azurerm_linux_virtual_machine.vm[0]: Still creating... [10s elapsed]
 azurerm_linux_virtual_machine.vm[0]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.vm[1]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.vm[1]: Still creating... [30s elapsed]
 azurerm_linux_virtual_machine.vm[0]: Still creating... [30s elapsed]
+azurerm_linux_virtual_machine.vm[1]: Still creating... [40s elapsed]
 azurerm_linux_virtual_machine.vm[0]: Still creating... [40s elapsed]
+azurerm_linux_virtual_machine.vm[1]: Creation complete after 48s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/virtualMachines/WebServerEx-vm-1]
 azurerm_linux_virtual_machine.vm[0]: Creation complete after 49s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/virtualMachines/WebServerEx-vm-0]
 azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Creating...
+azurerm_virtual_machine_data_disk_attachment.mount_disk[1]: Creating...
+azurerm_virtual_machine_data_disk_attachment.mount_disk[1]: Still creating... [10s elapsed]
 azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Still creating... [10s elapsed]
+azurerm_virtual_machine_data_disk_attachment.mount_disk[1]: Still creating... [20s elapsed]
 azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Still creating... [20s elapsed]
 azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Still creating... [30s elapsed]
-azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Creation complete after 32s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/virtualMachines/WebServerEx-vm-0/dataDisks/WebServerEx-disk-0]
+azurerm_virtual_machine_data_disk_attachment.mount_disk[1]: Still creating... [30s elapsed]
+azurerm_virtual_machine_data_disk_attachment.mount_disk[0]: Creation complete after 31s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/virtualMachines/WebServerEx-vm-0/dataDisks/WebServerEx-disk-0]
+azurerm_virtual_machine_data_disk_attachment.mount_disk[1]: Creation complete after 31s [id=/subscriptions/a05e9c22-474e-442c-8d07-d2b208778ef9/resourceGroups/WebServerEx-rg/providers/Microsoft.Compute/virtualMachines/WebServerEx-vm-1/dataDisks/WebServerEx-disk-1]
 
-Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 19 added, 0 changed, 0 destroyed.
 ```
 
 Plan applied successfully. Screenshot of the infrastructure in Azure:
