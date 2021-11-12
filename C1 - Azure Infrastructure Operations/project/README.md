@@ -34,6 +34,8 @@ az policy definition create --name "Tagging-Policy" --display-name "Require Tagg
 
 ### 2. VM Image
 
+Make sure a resource group named *PackerImage-rg* exists in Azure. This group is used to contain the VM image, optionally it can be modifined in the Packer configuration file.
+
 To create the image used for the virtual machines:
 
 - **cd** to **./packer**

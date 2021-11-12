@@ -30,5 +30,5 @@ variable "packer_image" {
 
 variable "number_vms" {
 	description = "Number of virtual machines to create"
-	default = 1
+	default = 2
 }
